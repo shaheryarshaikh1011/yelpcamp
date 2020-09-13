@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yelpcamp</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Yelpcamp</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Login</a></li>
+        <li><a href="/">Signup</a></li>
+        <li><a href="/">logout</a></li>
+
+      </ul>
+      
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Campgrounds page</h1>
+			<p>hand picked cg from all over the world</p>
+			<p>
+				<a class="btn btn-primary btn-large" href="/campgrounds/new">add new cg</a>
+			</p>
+		</div>
+	
+	</header>
+
+
+
+	<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+		<%campgrounds.forEach(function(campground){%>
+		<div class="col-md-3 col-sm-6">
+			<div class="thumbnail">
+				<img src="<%=campground.image%>">
+				<div class="caption">
+					<h4><%=campground.name%></h4>
+				</div>
+				<p>
+					<a href="/campgrounds/<%=campground._id%>" class="btn btn-primary">More Info</a>
+				</p>
+			
+			</div>
+			
+		</div>
+
+		<%});%>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

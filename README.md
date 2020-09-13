@@ -1,65 +1,65 @@
-#yelpcamp
+# yelpcamp
 
-Routes
+# Routes
 
-INDEX  /campgrounds
-NEW    /campgrounds/new
-CREATE /campgrounds
-SHOW   /campgrounds/:id
+* INDEX  /campgrounds
+* NEW    /campgrounds/new
+* CREATE /campgrounds
+* SHOW   /campgrounds/:id
 
-NEW    /campgrounds/:id/comments/new  GET
-CREATE /campgrounds/:id/comments	  POST
+* NEW    /campgrounds/:id/comments/new  GET
+* CREATE /campgrounds/:id/comments	  POST
 
+# initial routes
+* add landing page
+* add campgrounds page
 
-*add landing page
-*add campgrounds page
+* each campground has
+* name
+* image
 
-each campground has
-*name
-*image
+# layout and styling
 
-#layout and styling
-
-*header footer
-*add in bootstrap
-
-
-#create new cg
-*setup cg route
-*add body-parser
-*setup form
-*add basic unstyled form
+* header footer
+* add in bootstrap
 
 
-#style
-*add better header
-*make cg display in grid
+# create new cg
+* setup cg route
+* add body-parser
+* setup form
+* add basic unstyled form
 
-#navbar and form
-*add navbar
-*style new cg form
 
-#show page
-*make show page
+# style
+* add better header
+* make cg display in grid
 
-#refactor mongoose code
-*use module.exports
-*requre everthing correctly
+# navbar and form
+* add navbar
+* style new cg form
 
-#add seeds file
-*add seeds file
-*run seeds file everytime server starts
+# show page
+* make show page
 
-#add comment model
-*make error go away
-*display comments
+# refactor mongoose code
+* use module.exports
+* requre everthing correctly
 
-#comment new/create
-*discuss nested routes
-*add comment new and create routes
-*add new comment form
+# add seeds file
+* add seeds file
+* run seeds file everytime server starts
 
-#style show page
+# add comment model
+* make error go away
+* display comments
 
-*add sidebar to show page
-*display comments nicely
+# comment new/create
+* discuss nested routes
+* add comment new and create routes
+* add new comment form
+
+# style show page
+
+* add sidebar to show page
+* display comments nicely

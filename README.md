@@ -63,3 +63,8 @@
 
 * add sidebar to show page
 * display comments nicely
+
+# add User model
+
+* install all packages needed for auth
+* define user model

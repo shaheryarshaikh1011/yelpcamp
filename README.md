@@ -68,3 +68,17 @@
 
 * install all packages needed for auth
 * define user model
+
+# passport
+
+* configure passport
+
+# register routes
+
+* add register route
+* register template
+
+# login routes
+
+* add login routes
+* login template

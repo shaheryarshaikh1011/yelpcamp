@@ -21,6 +21,19 @@ app.set("view engine","ejs");
 
 
 
+//passport configuration
+app.use(require("express-session")({
+	secret:"Once again Bittu wins cutest dog!",
+	resave: false,
+	saveUninitialized:false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 app.get("/",function(req,res) {
 	// body...
@@ -145,6 +158,55 @@ app.post("/campgrounds/:id/comments",function(req,res) {
 	//redirect to show page
 
 })
+
+
+//=============
+//auth routes
+//===========
+
+//show register form
+app.get("/register",function(req,res) {
+	res.render("register");
+	// body...
+});
+
+//handle signup logic
+app.post("/register",function(req,res) {
+	// body...
+	var newUser = new User({username:req.body.username});
+	User.register(newUser,req.body.password,function(err,user) {
+		// body...
+		if(err)
+		{
+			console.log(err);
+			return res.render("register");
+		}
+		passport.authenticate("local")(req,res,function() {
+			// body...
+			res.redirect("/campgrounds");
+		});
+	});
+});
+
+
+//login routes
+
+//login form
+app.get("/login",function(req,res) {
+	// body...
+	res.render("login");
+});
+
+//handling login logic
+app.post("/login",passport.authenticate("local",
+	{
+		successRedirect:"/campgrounds",
+	 	failureRedirect:"/login"
+	 }),function(req,res) {
+	// body...
+	
+});
+
 
 app.listen(3000,'localhost',function() {
 	// body...

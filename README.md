@@ -93,3 +93,7 @@
 
 # show/hide links
 * show/hide auth links in navbar correctly
+
+
+# refactor the code
+* use express router to reorganize all routes

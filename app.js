@@ -35,6 +35,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+app.use(function(req,res,next) {
+	res.locals.currentUser=req.user;
+	next();
+})
 app.get("/",function(req,res) {
 	// body...
 	res.render("landing.ejs");
@@ -42,7 +46,7 @@ app.get("/",function(req,res) {
 
 
 app.get("/campgrounds",function(req,res) {
-	
+	console.log(req.user);
 	Campground.find({},function(err,allcampgrounds) {
 		if(err)
 		{
@@ -50,7 +54,7 @@ app.get("/campgrounds",function(req,res) {
 		}
 		else
 		{
-			res.render("campgrounds/index.ejs",{campgrounds:allcampgrounds});
+			res.render("campgrounds/index.ejs",{campgrounds:allcampgrounds,currentUser:req.user});
 		}
 		// body...
 	})

@@ -89,3 +89,7 @@
 * prevent user from adding comment if not signed in
 * add links to navbar
 * show/hide auth links correctly
+
+
+# show/hide links
+* show/hide auth links in navbar correctly

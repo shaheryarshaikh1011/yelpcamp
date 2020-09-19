@@ -13,7 +13,7 @@ var commentRoutes =require("./routes/comments");
 var campgroundRoutes=require("./routes/campgrounds");
 var indexRoutes=require("./routes/index");
 app.use(express.static(__dirname + "/public"))
-seedDB();
+
 
 
 mongoose.set('useNewUrlParser', true);

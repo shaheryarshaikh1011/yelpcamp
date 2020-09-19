@@ -43,8 +43,14 @@ router.post("/campgrounds/:id/comments",isLoggedIn,function(req,res) {
 				}
 				else
 				{
+					//add username and id to comment
+					comment.author.id=req.user._id;
+					comment.author.username=req.user.username;
+					comment.save();
+					//save comments
 					campground.comments.push(comment);
 					campground.save();
+					console.log(comment);
 					//show page
 					res.redirect("/campgrounds/"+campground._id);
 				}

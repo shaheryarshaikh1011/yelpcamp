@@ -123,6 +123,27 @@
 * user can only del his/her cg
 * hide/show edit n del btn
 
+## Editing comments
+* add edit route
+* add edit button
+* add update route
+
+## deleting comments
+* add destroy route 
+* add delete button
+
+## authorization comments
+* user edit his comments
+* user can only del his/her comments
+* hide/show edit and del button
+* refactor middleware
+
+
+## adding flash
+* demo working version
+* install and configure connect-flash
+* add bootstrap alerts to header
+
 # site online at
 https://yelpcamp1011.herokuapp.com/
 

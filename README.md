@@ -98,6 +98,7 @@
 # refactor the code
 * use express router to reorganize all routes
 
+
 ## users + comments
 * Associate Users and Comments
 * Save Author's name to a comment Automatically
@@ -105,3 +106,9 @@
 ## users + campgrounds
 * prevent unauth from creating cg
 * save uname+id to new cg
+
+
+
+# site online at
+https://yelpcamp1011.herokuapp.com/
+

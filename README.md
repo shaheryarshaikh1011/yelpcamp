@@ -107,8 +107,24 @@
 * prevent unauth from creating cg
 * save uname+id to new cg
 
+## Editing CG
+* add methd override
+* add edit route for cg
+* link to edit page
+* add update route
+* fix $set prob
 
+## deleting cg
+* add destroy
+* add delete
+
+## authorization
+* user cn only edit his/her cg
+* user can only del his/her cg
+* hide/show edit n del btn
 
 # site online at
 https://yelpcamp1011.herokuapp.com/
+
+
 

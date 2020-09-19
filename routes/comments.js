@@ -8,7 +8,7 @@ var Comment =require("../models/comment");
 router.get("/campgrounds/:id/comments/new",isLoggedIn,function(req,res) {
 	// body...
 	//find cg by id
-	console.log(req.params.id);
+	
 	Campground.findById(req.params.id,function(err,campground) {
 		// body...
 		if(err)

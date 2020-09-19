@@ -40,6 +40,7 @@ router.post("/campgrounds/:id/comments",middleware.isLoggedIn,function(req,res) 
 			Comment.create(req.body.comment,function(err,comment) {
 				if(err)
 				{
+					req.flash("error","something went wrong");
 					console.log(err);
 				}
 				else
@@ -53,6 +54,7 @@ router.post("/campgrounds/:id/comments",middleware.isLoggedIn,function(req,res) 
 					campground.save();
 					console.log(comment);
 					//show page
+					req.flash("success","Added comment");
 					res.redirect("/campgrounds/"+campground._id);
 				}
 				// body...
@@ -105,6 +107,7 @@ router.delete("/campgrounds/:id/comments/:comments_id",middleware.checkCommentOw
 		}
 		else
 		{
+			req.flash("success","Comment deleted");
 			res.redirect("/campgrounds/"+req.params.id);
 		}
 		// body...

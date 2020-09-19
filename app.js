@@ -2,6 +2,7 @@ var express = require("express");
 var app= express();
 var bodyParser=require("body-parser");
 var mongoose=require("mongoose");
+var flash=require("connect-flash");
 var passport=require("passport");
 var LocalStrategy=require("passport-local");
 var methodOverride=require("method-override");
@@ -15,7 +16,7 @@ var campgroundRoutes=require("./routes/campgrounds");
 var indexRoutes=require("./routes/index");
 app.use(express.static(__dirname + "/public"))
 app.use(methodOverride("_method"));
-
+app.use(flash());
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
@@ -41,8 +42,12 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req,res,next) {
 	res.locals.currentUser=req.user;
+	res.locals.error=req.flash("error");
+	res.locals.success=req.flash("success");
 	next();
 });
+
+
 
 
 //requiring routes
